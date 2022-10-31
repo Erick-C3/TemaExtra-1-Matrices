@@ -22,5 +22,22 @@ const matrizNumeros = [
 
 verMatriz(matrizNumeros);
 
-//para cada final calcular la sumatoria de sus elementos
+//para cada fila calcular la sumatoria de sus elementos
 //mostrar el resultado obtenido
+
+function sumatoriaFilas(matriz){
+    let filaSumatoria = [];
+    let sumatoriaColumnas = 0;
+
+    matriz.forEach(fila => {
+        fila.forEach(colElmn => {
+            sumatoriaColumnas += colElmn;
+        });
+        filaSumatoria.push(sumatoriaColumnas);
+        sumatoriaColumnas = 0;
+    });
+    console.log(filaSumatoria);
+    return filaSumatoria;
+}
+
+sumatoriaFilas(matrizNumeros);
