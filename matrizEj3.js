@@ -24,3 +24,35 @@ verMatriz(mensajeOculto);
 
 //convertir cada elemento en la matriz a su valor de tipo caracter
 //mostrar la matriz obtenida
+
+/*
+
+    Requisitos
+
+    X convertir cada elemento en un caracter
+    X mostrar el resultado
+        X mostrar la matriz
+*/
+
+// CTRL + espacio -> MENU DE SUGERENCIAS COMPORTAMIENTOS/OTRAS COSAS IMPORTANTES
+/**
+ * Decodifica la matirz recibida 
+ * @param {Array <Array>} matrizCodificada codigo numericos de tabla ascci a decodificar
+ * @returns el resultado de la matriz decodificada
+ */
+function decifrarMatriz(matrizCodificada){
+    let matrizResultado = [];
+    let vectorFila = [];
+    matrizCodificada.forEach((fila) => {
+        fila.forEach(colElm => {
+            /* colElm = String.fromCharCode(colElm); */
+            vectorFila.push(  String.fromCharCode(colElm)  );
+        });
+        matrizResultado.push( vectorFila );
+        vectorFila = [];
+    });
+    return matrizResultado;
+}
+
+
+verMatriz( decifrarMatriz(mensajeOculto) );
